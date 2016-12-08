@@ -1,0 +1,20 @@
+#theads{
+    text-align: center;
+}
+
+#header-fixed { 
+    position: fixed; 
+    top: 0px; display:none;
+    background-color:white;
+    text-align: center;
+}
+
+#cartContainer{
+    height: 800px;
+}
+
+#cart{
+    max-width: 800px;
+    min-width: 800px;
+    margin: auto;
+}

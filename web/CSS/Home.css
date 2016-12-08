@@ -1,0 +1,184 @@
+body{
+    
+}
+#slidess{
+    max-width: 1000px;
+    min-width: 1000px;
+    position: relative;
+    margin: auto;
+
+}
+
+#slidess img{
+    width: 100%;
+    height: 400px;
+}
+
+.floating1{
+    position: absolute;
+    top:45%; 
+    font-size: 50px;
+    color:white;
+    cursor:pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+
+}
+
+.floating1:hover{
+    text-decoration: none;
+}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tab-content{
+    max-height: 470px;
+    min-height:470px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    
+    
+}
+
+#tabs{
+    max-width: 540px;
+    min-width: 540px;
+    max-height: 540px;
+    min-height: 540px;
+    float:left;
+    border: 3px solid #6E0F11;
+    padding: 20px;
+}
+
+.ff { 
+    height:auto;
+    border: 3px solid #6E0F11;
+    bottom: 338px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+
+}
+#fieldset{
+    float: right;
+    max-width: 350px;
+    min-width: 350px;
+    min-height: 540px;
+    max-height: 540px;
+    margin-bottom: 25px;
+    
+    
+
+}
+#fieldsett{
+    
+    max-width: 320px;
+    min-width: 320px;
+    max-height: 450px;
+    
+}
+
+#bodyy{
+    margin: 20px;
+    height: auto;
+    padding-bottom: 25px;
+}
+
+.pic1 img{
+    position: relative;
+    top: 5px;
+    left: 2px;
+    max-width: 250px;
+    min-width: 250px;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+
+
+#hometab{
+    border: 1px solid black;
+    max-width: 470px;
+    min-width: 470px;
+}
+
+.tabpic{
+    width: 150px;
+    height: 150px;
+}
+
+.tabtitle{
+    width: 311px;
+    height: 31px;
+    text-align: center;
+    vertical-align: middle;
+    
+    
+}
+
+.tabdesc{
+    width: 311px;
+    height: 60px;
+}
+.tr1{
+    height: 31px;
+}
+
+.tr2{
+    height: 60px;
+    border-bottom:1px solid black;
+}
+
+.productimage{
+    max-width: 140px;
+    min-width: 140px;
+    max-height: 140px;
+    min-height: 140px;
+    margin: 20px 10px 20px 10px;
+    
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
