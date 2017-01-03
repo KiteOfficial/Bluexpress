@@ -1,0 +1,23 @@
+.ViewAll{
+   float: right;
+   width: 800px;
+   height: 700px;;
+}
+
+#wrapper {
+  display: block;
+  width: 790px;
+  max-height: 700px;
+  background: #fff;
+  margin: 0 auto;
+  padding: 10px 17px;
+  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
+}
+
+.names{
+    width: 20%;
+}
+.ids{
+    width: 5%;
+}
+

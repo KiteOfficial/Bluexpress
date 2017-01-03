@@ -11,38 +11,40 @@ public class DeleteRecord extends HttpServlet {
   Connection con = null;
   PreparedStatement ps = null;
   ResultSet rs = null;
-  
+
   String id;
-  
+
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
-    
-    
-    try{
-      id = request.getParameter("id");
+
+    try {
       con = Database.getConnection();
+      
+
+      id = request.getParameter("id");
+
       ps = con.prepareStatement("delete from product where id = ?");
       ps.setString(1, id);
       ps.executeUpdate();
-    }catch(SQLException e){
-      
-    }finally{
-      try{
+    } catch (SQLException e) {
+
+    } finally {
+      try {
         con.close();
-        ps=null;
-        rs=null;
+        ps = null;
+        rs = null;
         getServletContext().getRequestDispatcher("/ViewAll").forward(request, response);
-      }catch(SQLException e){
-        
+      } catch (SQLException e) {
+
       }
     }
-    
-    
-    
+
   }
 
-@Override
+  
+
+  @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     processRequest(request, response);

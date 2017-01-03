@@ -19,11 +19,14 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.antlr-4.5.3-complete.jar}</file>
+                    <file>${file.reference.commons-logging-1.2.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.commons-logging-1.2.jar}</file>
+                    <file>${antlr.runtime.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.antlr-runtime-4.5.3.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
@@ -40,3 +43,4 @@
         </spellchecker-wordlist>
     </configuration>
 </project>
+<!-- Modified by ANTLR plugin -->

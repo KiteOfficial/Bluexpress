@@ -25,10 +25,11 @@ public class uploadServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        HttpSession session = request.getSession();
         PrintWriter out = response.getWriter();
         String error = null;
         try {
+          boolean accept = false;
             pName = request.getParameter("productname");
             price = request.getParameter("price");
             desc = request.getParameter("description");
@@ -45,21 +46,31 @@ public class uploadServlet extends HttpServlet {
             }
 
             con = Database.getConnection();
+            
+            ps = con.prepareStatement("Select productName from product");
+            rs = ps.executeQuery();
+            while(rs.next()){
+              if(pName.equals(rs.getString(1))){
+                accept = true;
+              }
+              
+            }
+            if(accept != true){
             ps = (PreparedStatement) con.prepareStatement("Insert into product (productname, price, description, type, image, Numberofsale, Stack) values (?,?,?,?,?,?,?)");
             ps.setString(1, pName);
             ps.setString(2, price);
             ps.setString(3, desc);
             ps.setString(4, type);
             if (inputStream != null) {
-
-                ps.setBlob(5, inputStream);
+              ps.setBlob(5, inputStream);
             }
             ps.setString(6, "0");
             ps.setString(7, "0");
 
             //sends the statement to the database server
             ps.executeUpdate();
-
+            }
+            session.setAttribute("accept",accept);
         } catch (SQLException e) {
             
             

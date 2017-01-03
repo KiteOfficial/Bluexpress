@@ -20,7 +20,7 @@ public class DisplayImage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-
+          // Generate Blob into image in one folder
             String filepath = "C:\\Users\\Atik\\BEII1\\web\\Images\\products\\";
             con = Database.getConnection();
             ps = (PreparedStatement) con.prepareStatement("Select productName, description, type, image From product");
