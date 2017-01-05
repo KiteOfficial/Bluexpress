@@ -176,6 +176,7 @@
 
 
         </div>
+    </div>
         <%
             ps = con.prepareStatement("select * from about where id = 1");
             rs = ps.executeQuery();
