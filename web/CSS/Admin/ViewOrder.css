@@ -82,3 +82,11 @@ table .collapse.in {
     width: 20%;
     text-align: center;
 }
+
+.header .sign:after{
+  content:"-";
+  display:inline-block;      
+}
+.header.expand .sign:after{
+  content:"+";
+ }
