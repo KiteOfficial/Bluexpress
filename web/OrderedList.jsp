@@ -85,7 +85,7 @@
                             rs1 = ps1.executeQuery();
                             while (rs1.next()) {
                         %>
-                        <tr class="row<%=rs1.getString("ID")%> collapse" id="row">
+                        <tr class="row<%=rs1.getString("ID")%> collapse" id="row1">
                             <td></td>
                             <td colspan="2"><%=rs1.getString("Product")%></td>
                             <td><%=rs1.getString("Quantity")%></td>
@@ -97,9 +97,6 @@
                         <script>
                             $('.header').click(function () {
                                 $(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
-                            });
-                            $('#row').click(function () {
-                                $(this).find('i').toggleClass('glyphicon-plus').toggleClass('glyphicon-minus');
                             });
                         </script>
                     </table>

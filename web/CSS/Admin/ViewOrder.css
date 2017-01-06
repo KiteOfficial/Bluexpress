@@ -83,10 +83,22 @@ table .collapse.in {
     text-align: center;
 }
 
+#row{
+    
+}
+
+#row1{
+    background-color: #f1f1f1;
+}
+
 .header .sign:after{
   content:"-";
   display:inline-block;      
 }
 .header.expand .sign:after{
   content:"+";
+ }
+
+ .header{
+     background-color: #a9a9a9;
  }

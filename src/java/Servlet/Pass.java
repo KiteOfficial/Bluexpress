@@ -26,7 +26,7 @@ public class Pass extends HttpServlet {
       mycart = new ArrayList();
     }
     try {
-      int maxid = 0;
+      int max = 1, maxid = 0;
       con = Database.getConnection();
       
       
@@ -51,9 +51,9 @@ public class Pass extends HttpServlet {
         ps = con.prepareStatement("Insert into customerorder (ID, Order_ID, Product, Quantity, Price) values (?, ?, ?, ?, ?)");
         for (int i = 0; i < mycart.size(); i++) {
           Cart1 it = (Cart1) mycart.get(i);
-          int max = 0;
+          
           ps.setString(3, it.getProdname());
-          ps.setInt(2, max + 1);
+          ps.setInt(2, max);
           ps.setInt(1, maxid);
           ps.setInt(4, it.getQty());
           ps.setDouble(5, it.getPrice());

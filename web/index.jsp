@@ -150,7 +150,8 @@
                             $('#mytabcontent').slimScroll();
 
                             $('#testDiv2').slimScroll({
-                                allowPageScroll: true
+                                allowPageScroll: true,
+                                wheelStep: 15
                             });
 
                         });

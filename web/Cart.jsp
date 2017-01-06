@@ -21,7 +21,7 @@
         <link rel="shortcut icon" href="Images/home/favicon.ico">
         <script src="JS/bootbox.min.js"></script>
     </head>
-    <body>
+    <body id="body">
         <div class="background-image" style="background-image: url('Images/bg.jpg');"></div>
         <script>
 
@@ -144,6 +144,7 @@
                             </div>
                             <div class="clear"></div>
                         </div>
+
                         <!-- //Mainbar-Ends-Here -->
 
                         <!-- Items-Starts-Here -->
@@ -202,6 +203,17 @@
                         <div class="total1">Total Price</div>
                         <div class="total2"><%=String.format("%.2f", tprice1)%></div>
                         <div class="clear"></div>
+                        
+                    </div>
+                                            <!-- Checkout-Starts-Here -->
+                    <div class="checkout">
+
+
+                        <div class="checkout-btn">
+                            <button type="button" id="btncheckout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#CheckOut">Check Out</button>
+                            <button type="button" id="btnclearout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#ClearOut">Clear</button>
+                        </div>
+                        <div class="clear"></div>
                         <div class="modal fade" id="CheckOut" role="dialog">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
@@ -247,20 +259,12 @@
                             </div>
                         </div>
                     </div>
+                    <!-- //Checkout-Ends-Here -->
                     <!-- //Total-Price-Ends-Here -->
 
-                    <!-- Checkout-Starts-Here -->
-                    <div class="checkout">
-
-                        
-                        <div class="checkout-btn">
-                            <button type="button" id="btncheckout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#CheckOut">Check Out</button>
-                            <button type="button" id="btnclearout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#ClearOut">Clear</button>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <!-- //Checkout-Ends-Here -->
+                    
                 </div>
+
             </div> <!-- end of cartContainer -->
         </div> <!-- end of Container -->
         <%
@@ -326,4 +330,20 @@
                 System.out.println(e);
             }%>
     </body>
+
+    <script type="text/javascript">
+                                            $(function () {
+                                                $('#mytabcontent').slimScroll();
+
+                                                $('.items').slimScroll({
+                                                    wheelStep: '3',
+                                                    allowPageScroll: true,
+                                                    opacity: 1,
+                                                    color: '#c1c1c1'
+
+                                                });
+
+                                            });
+    </script>
+
 </html>
