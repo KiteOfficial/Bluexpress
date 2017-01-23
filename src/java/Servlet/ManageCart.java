@@ -64,13 +64,9 @@ public class ManageCart extends HttpServlet {
           Cart1 it = (Cart1) mycart.get(parseupdate);
           double totals = it.getPrice();
           double totalnew = parseqty * totals;
-          //mycart.remove(Integer.parseInt(del));
-          //myList.get(3).setEmail("new email");
           it.setTprice(totalnew);
           it.setQty(parseqty);
-
           session.setAttribute("listtt", mycart);
-
           response.sendRedirect("Cart.jsp");
         }
 

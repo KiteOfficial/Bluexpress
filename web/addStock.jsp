@@ -59,6 +59,7 @@
                     <li><a href="OrderedList">Ordered List</a></li>
                     <li class="active"><a>Manage Product</a></li>
                     <li><a href="ManagePage.jsp">Manage Page</a></li>
+                    <li><a href="#">Manage Report</a></li>
                     <li style="float: right;"><a href="LogOut">Logout</a></li>
                     <li style="float: right;"><a href="Welcome">Page</a></li>
                 </ul>

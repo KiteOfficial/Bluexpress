@@ -29,6 +29,7 @@
                     <li class="active"><a>Ordered List</a></li>
                     <li><a href="ViewAll">Manage Product</a></li>
                     <li><a href="ManagePage.jsp">Manage Page</a></li>
+                    <li><a href="#">Manage Report</a></li>
                     <li style="float: right;"><a href="LogOut">Logout</a></li>
                     <li style="float: right;"><a href="Welcome">Page</a></li>
                 </ul>
@@ -37,7 +38,6 @@
             <div id="navigator2">
                 <ul>
                     <li style="cursor: default;" class="active1"><a>Waiting</a></li>
-                    <li><a href="#">Accepted</a></li>
                 </ul>
             </div>
             <div id="orderContainer">
@@ -45,11 +45,13 @@
                 <div id="wrapper">
                     <table id="keywords" class="table table-hover" cellspacing="0" cellpadding="0">
                         <thead>
-                            <tr>
+                            <tr class="head1">
                                 <th class="thf" colspan="2"><span>Customer Name</span></th>
                                 <th class="mid"><span>Company Name</span></th>
                                 <th class="mid"><span>Total Price</span></th>
-                                <th class="mid"><span>Status</span></th>
+                                <th class="mid"><span>Contact #</span></th>
+                                <th class="mid"><span>Company Address</span></th>
+                                
                             </tr>
                         </thead>
                         <%
@@ -77,7 +79,8 @@
                             <td class="laman"><%=rs.getString("Name")%></td>
                             <td class="laman"><%=rs.getString("CompanyName")%></td>  
                             <td class="laman"><%=rs.getString("Total_Price")%></td>
-                            <td class="laman"><%=rs.getString("Status")%></td>
+                            <td class="laman"><%=rs.getString("Contact")%></td>
+                            <td class="laman"><%=rs.getString("CompanyAddress")%></td>
                         </tr>
                         <%
                             ps1 = (PreparedStatement) con.prepareStatement("Select * from customerorder where id = ?");
@@ -85,8 +88,9 @@
                             rs1 = ps1.executeQuery();
                             while (rs1.next()) {
                         %>
-                        <tr class="row<%=rs1.getString("ID")%> collapse" id="row1">
+                        <tr class="row<%=rs1.getString("ID")%> collapse head2" id="row1">
                             <td></td>
+                            <td><%=rs1.getString("Order_ID")%></td>
                             <td colspan="2"><%=rs1.getString("Product")%></td>
                             <td><%=rs1.getString("Quantity")%></td>
                             <td><%=rs1.getString("Price")%></td> 

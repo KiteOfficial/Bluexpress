@@ -86,6 +86,7 @@
                         <%} else { %>
                     <li><a class="lili" href="ShopCart1">Cart<% out.print("(" + count + ")");%></a></li>
                         <% } %>
+                    <li><a class="lili" href="ViewOrder">View Order</a></li>
 
                 </ul>
                 <div id="clock">
@@ -173,6 +174,7 @@
 
 
         </div>
+    </div>
         <%
             ps = con.prepareStatement("select * from about where id = 1");
             rs = ps.executeQuery();
@@ -212,7 +214,11 @@
                 </div>
             </div>
             <div id="copyright" class="copy-right-grids">
-                <p class="footer-gd">&copy; 2017 BluExpress Industries Incorporation. All Rights Reserved | </p> 
+                <p class="footer-gd">Copyright &copy; 2016&ndash;<script language="javascript" type="text/javascript">
+                    var today = new Date();
+                    var year = today.getFullYear();
+                    document.write(year);
+                    </script> BluExpress Industries Incorporation. All Rights Reserved | </p> 
             </div>
         </div>
         <%      }
@@ -229,6 +235,7 @@
             } catch (ClassNotFoundException e) {
                 System.out.println(e);
             }%>
+            
     </body>
 </html>
 

@@ -36,6 +36,7 @@
                     <li><a href="OrderedList">Ordered List</a></li>
                     <li><a href="ViewAll">Manage Product</a></li>
                     <li class="active"><a>Manage Page</a></li>
+                    <li><a href="#">Manage Report</a></li>
                     <li style="float: right;"><a href="LogOut">Logout</a></li>
                     <li style="float: right;"><a href="Welcome">Page</a></li>
                 </ul>

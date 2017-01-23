@@ -21,7 +21,7 @@
         <link rel="shortcut icon" href="Images/home/favicon.ico">
         <script src="JS/bootbox.min.js"></script>
     </head>
-    <body>
+    <body id="body">
         <div class="background-image" style="background-image: url('Images/bg.jpg');"></div>
         <script>
 
@@ -113,6 +113,7 @@
                         <%} else { %>
                     <li><a class="lili">Cart<% out.print("(" + count + ")");%></a></li>
                         <% } %>
+                    <li><a class="lili" href="ViewOrder">View Order</a></li>
                 </ul>
                 <div id="clock">
                     <jsp:include page="clock.jsp"></jsp:include>
@@ -144,6 +145,7 @@
                             </div>
                             <div class="clear"></div>
                         </div>
+
                         <!-- //Mainbar-Ends-Here -->
 
                         <!-- Items-Starts-Here -->
@@ -202,6 +204,17 @@
                         <div class="total1">Total Price</div>
                         <div class="total2"><%=String.format("%.2f", tprice1)%></div>
                         <div class="clear"></div>
+                        
+                    </div>
+                                            <!-- Checkout-Starts-Here -->
+                    <div class="checkout">
+
+
+                        <div class="checkout-btn">
+                            <button type="button" id="btncheckout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#CheckOut">Check Out</button>
+                            <button type="button" id="btnclearout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#ClearOut">Clear</button>
+                        </div>
+                        <div class="clear"></div>
                         <div class="modal fade" id="CheckOut" role="dialog">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
@@ -247,20 +260,12 @@
                             </div>
                         </div>
                     </div>
+                    <!-- //Checkout-Ends-Here -->
                     <!-- //Total-Price-Ends-Here -->
 
-                    <!-- Checkout-Starts-Here -->
-                    <div class="checkout">
-
-                        
-                        <div class="checkout-btn">
-                            <button type="button" id="btncheckout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#CheckOut">Check Out</button>
-                            <button type="button" id="btnclearout" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#ClearOut">Clear</button>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <!-- //Checkout-Ends-Here -->
+                    
                 </div>
+
             </div> <!-- end of cartContainer -->
         </div> <!-- end of Container -->
         <%
@@ -308,7 +313,11 @@
                 </div>
             </div>
             <div id="copyright" class="copy-right-grids">
-                <p class="footer-gd">&copy; 2016 BluExpress Industries Incorporation. All Rights Reserved | </p> 
+                <p class="footer-gd">Copyright &copy; 2016&ndash;<script language="javascript" type="text/javascript">
+                    var today = new Date();
+                    var year = today.getFullYear();
+                    document.write(year);
+                    </script> BluExpress Industries Incorporation. All Rights Reserved | </p> 
             </div>
         </div>
         <%      }
@@ -326,4 +335,20 @@
                 System.out.println(e);
             }%>
     </body>
+
+    <script type="text/javascript">
+                                            $(function () {
+                                                $('#mytabcontent').slimScroll();
+
+                                                $('.items').slimScroll({
+                                                    wheelStep: '3',
+                                                    allowPageScroll: true,
+                                                    opacity: 1,
+                                                    color: '#c1c1c1'
+
+                                                });
+
+                                            });
+    </script>
+
 </html>

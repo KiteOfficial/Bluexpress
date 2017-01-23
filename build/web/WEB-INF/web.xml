@@ -140,6 +140,26 @@
         <servlet-name>OrderedList</servlet-name>
         <servlet-class>CallServlet.OrderedList</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>main.java.com.acc.verify.servlet.AccountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <servlet-class>main.java.com.acc.verify.servlet.RegistrationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResendTokenServlet</servlet-name>
+        <servlet-class>main.java.com.acc.verify.servlet.ResendTokenServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerifyCodeServlet</servlet-name>
+        <servlet-class>main.java.com.acc.verify.servlet.VerifyCodeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewOrder</servlet-name>
+        <servlet-class>CallServlet.ViewOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/Main</url-pattern>
@@ -279,6 +299,26 @@
     <servlet-mapping>
         <servlet-name>OrderedList</servlet-name>
         <url-pattern>/OrderedList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/AccountServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <url-pattern>/RegistrationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResendTokenServlet</servlet-name>
+        <url-pattern>/ResendTokenServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerifyCodeServlet</servlet-name>
+        <url-pattern>/VerifyCodeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewOrder</servlet-name>
+        <url-pattern>/ViewOrder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

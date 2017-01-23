@@ -1,12 +1,9 @@
 <%@page import="javax.swing.*"%>
-<%@page import="java.awt.*"%>
+<%@page import="java.awt.Image"%>
 <%@page import="java.io.*" %>
 <%@page import="java.sql.*" %>
 <%@page import="java.util.*" %>
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,15 +14,11 @@
         <script src="JS/bootstrap.min.js"></script>
         <script src="JS/jquery.slimscroll.js"></script>
         <link rel="stylesheet" href="CSS/main.css">
-        <link rel="stylesheet" href="CSS/About.css">
         <link rel="shortcut icon" href="Images/home/favicon.ico">
-
-
         <title>BluExpress</title>
     </head>
     <body>
         <div class="background-image" style="background-image: url('Images/bg.jpg');"></div>
-
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -40,100 +33,43 @@
                             <li><a href="Golf">Golf Trophies</a></li>
                         </ul>
                     </li>
-                    <li class="active"><a class="lili" style="cursor: default;">About Us</a></li>
+                    <li><a class="lili" href="AboutUs">About Us</a></li>
                         <%
-                          int count = 0;
-                          if (session.getAttribute("listtt") != null) {
-                            count = 0;
-
-                            ArrayList mycart = (ArrayList) session.getAttribute("listtt");
-                            for (int i = 0; i < mycart.size(); i++) {
-                              count = count + 1; %>
+                            int count = 0;
+                            if (session.getAttribute("listtt") != null) {
+                                count = 0;
+                                ArrayList mycart = (ArrayList) session.getAttribute("listtt");
+                                for (int i = 0; i < mycart.size(); i++) {
+                                    count = count + 1; %>
                         <% } %>
                         <% }%>
-
-                    <% if (count == 0) {%>
+                        <% if (count == 0) {%>
                     <li><a class="lili" href="ShopCart1">Cart</a></li>
                         <%} else { %>
                     <li><a class="lili" href="ShopCart1">Cart<% out.print("(" + count + ")");%></a></li>
                         <% } %>
-                    <li><a class="lili" href="ViewOrder">View Order</a></li>
-
+                    <li class="active"><a class="lili" style="cursor: default;">View Order</a></li>
                 </ul>
                 <div id="clock">
                     <jsp:include page="clock.jsp"></jsp:include>
                     </div>
-
                 </div>
             </nav>
-            <div id="Container">
-            <%
-              String url = "jdbc:mysql://localhost:3306/BEII";
-              Connection con = null;
-              PreparedStatement ps = null;
-              ResultSet rs = null;
-              Blob image = null;
-
-              try {
+                    <div id="Container">
+                        
+                    </div>
+        <%
+            String url = "jdbc:mysql://localhost:3306/BEII";
+            Connection con = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            try {
                 Class.forName("com.mysql.jdbc.Driver");
                 try {
-
-                  con = DriverManager.getConnection(url, "root", "");
-                  ps = (PreparedStatement) con.prepareStatement("Select * from about");
-                  rs = ps.executeQuery();
-                  while (rs.next()) {
-
-
-            %>
-            <div id="AboutContainer" class="form-style-5">
-                <fieldset>
-                    <legend><span class="number">*</span>Company Details</legend>
-                    <div id="cdetails">
-                        <p><strong>Company Name: </strong><%=rs.getString("CName")%></p>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend><span class="number">*</span>Company Address</legend>
-                    <div id="caddress">
-                        <div id="addressdetails">
-                            <p><strong>Company Address: </strong><%=rs.getString("Address")%></p>
-                        </div>
-                        <div id="map">
-                            <%=rs.getString("Map")%>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend><span class="number">*</span>Contact Details</legend>
-                    <div id="condetails">
-                        <p><strong>Email Address: </strong><%=rs.getString("EmailAdd")%></p>
-                        <p><strong>Smart #: </strong><%=rs.getString("Contact_Smart")%></p>
-                        <p><strong>Globe #: </strong><%=rs.getString("Contact_Globe")%></p>
-                        <p><strong>Telephone #: </strong><%=rs.getString("Contact_Tel")%> </p>
-                        <p><strong>Name: </strong><%=rs.getString("Fname")%>
-                            <%=rs.getString("Lname")%></p>
-
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend><span class="number">*</span>Social Contact</legend>
-                    <div id="caddress">
-                        <p><strong>Facebook: </strong><a href="<%=rs.getString("Facebook")%>" target="_blank"><%=rs.getString("Facebook")%></a></p>
-                    </div>
-                </fieldset>
-
-
-
-            </div> <!-- End of #AboutContainer -->
-            <% } %>
-
-        </div>
-        <%
-          ps = con.prepareStatement("select * from about where id = 1");
-          rs = ps.executeQuery();
-          while (rs.next()) {
-
-        %>
+                    con = DriverManager.getConnection(url, "root", "");
+                    ps = con.prepareStatement("select * from about where id = 1");
+                    rs = ps.executeQuery();
+                                 while (rs.next()) {%>
         <div id="mainfoot">
             <div id="Footer">
                 <div id="footsec">
@@ -159,9 +95,9 @@
                     <div id="footinfo" class="footer two">
                         <h4>Contact Information</h4>
                         <ul>
-                            <li><%=rs.getString("contact_tel") %></li>
-                            <li><%=rs.getString("contact_smart") %></li>
-                            <li><%=rs.getString("contact_globe") %></li>
+                            <li><%=rs.getString("contact_tel")%></li>
+                            <li><%=rs.getString("contact_smart")%></li>
+                            <li><%=rs.getString("contact_globe")%></li>
                         </ul>
                     </div>
                 </div>
@@ -175,18 +111,18 @@ document.write(year);
             </div>
         </div>
         <%      }
-            } catch (SQLException e) {
+                } catch (SQLException e) {
 
-            } finally {
-              try {
-                con.close();
-                ps = null;
-                rs = null;
-              } catch (SQLException e) {
-              }
-            }
-          } catch (ClassNotFoundException e) {
-            System.out.println(e);
-          }%>
+                } finally {
+                    try {
+                        con.close();
+                        ps = null;
+                        rs = null;
+                    } catch (SQLException e) {
+                    }
+                }
+            } catch (ClassNotFoundException e) {
+                System.out.println(e);
+            }%>
     </body>
 </html>

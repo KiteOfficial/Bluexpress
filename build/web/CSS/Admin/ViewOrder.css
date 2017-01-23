@@ -82,3 +82,35 @@ table .collapse.in {
     width: 20%;
     text-align: center;
 }
+
+#row{
+    
+}
+
+#row1{
+    background-color: #f1f1f1;
+}
+
+.header .sign:after{
+  content:"-";
+  display:inline-block;      
+}
+.header.expand .sign:after{
+  content:"+";
+ }
+
+ .header{
+     background-color: #a9a9a9;
+     font-size: 14px;
+     padding: 0px;
+     margin: 0px;
+ }
+ 
+ .head1{
+     font-size: 15px;
+ }
+ 
+ .head2{
+     font-size: 14px;
+ }
+ 
